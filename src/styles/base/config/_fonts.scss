@@ -1,0 +1,28 @@
+$font-default: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+$font-text: $font-default;
+$font-input: $font-default;
+$font-button: $font-default;
+$font-heading: $font-default;
+
+$font-size-text: 1rem;
+$font-size-input: 1rem;
+$font-size-button: 1rem; 
+$font-size-heading-1: 1.90rem;
+$font-size-heading-2: 1.75rem;
+$font-size-heading-3: 1.60rem;
+$font-size-heading-4: 1.45rem;
+$font-size-heading-5: 1.30rem;
+$font-size-heading-6: 1.15rem;
+
+$font-weight-thin:          100;
+$font-weight-extra-light:   200;
+$font-weight-light:         300;
+$font-weight-normal:        400;
+$font-weight-medium:        500;
+$font-weight-semi-bold:     600;
+$font-weight-bold:          700;
+$font-weight-extra-bold:    800;
+$font-weight-black:         900;
+
+@import "./classes/font-classes";

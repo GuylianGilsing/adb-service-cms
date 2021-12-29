@@ -1,0 +1,28 @@
+// Basics
+$color-white: #fff;
+$color-white-shade-1: darken($color-white, 2.5%);
+$color-white-shade-2: darken($color-white-shade-1, 2.5%);
+$color-white-shade-3: darken($color-white-shade-2, 2.5%);
+$color-white-shade-4: darken($color-white-shade-3, 2.5%);
+$color-white-shade-5: darken($color-white-shade-4, 2.5%);
+
+$color-black: #000;
+$color-black-shade-1: lighten($color-black, 13.5%);
+$color-black-shade-2: lighten($color-black-shade-1, 5%);
+$color-black-shade-3: lighten($color-black-shade-2, 5%);
+$color-black-shade-4: lighten($color-black-shade-3, 5%);
+$color-black-shade-5: lighten($color-black-shade-4, 5%);
+
+// Brand
+$color-brand-primary: #45AAF2;
+$color-brand-primary-shade-1: darken($color-brand-primary, 5%);
+$color-brand-primary-shade-2: darken($color-brand-primary-shade-1, 5%);
+$color-brand-primary-shade-3: darken($color-brand-primary-shade-2, 5%);
+$color-brand-primary-shade-4: darken($color-brand-primary-shade-3, 5%);
+$color-brand-primary-shade-5: darken($color-brand-primary-shade-4, 5%);
+
+// Error
+$color-error: #E74C3C;
+$color-success: #4cd137;
+
+@import "./classes/color-classes";

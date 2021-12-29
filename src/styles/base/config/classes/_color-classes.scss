@@ -1,0 +1,31 @@
+.bg--color{
+    &-white{
+        background-color: $color-white;
+    
+        &-shade-1{background-color: $color-white-shade-1;}
+        &-shade-2{background-color: $color-white-shade-2;}
+        &-shade-3{background-color: $color-white-shade-3;}
+        &-shade-4{background-color: $color-white-shade-4;}
+        &-shade-5{background-color: $color-white-shade-5;}
+    }
+
+    &-black{
+        background-color: $color-black;
+    
+        &-shade-1{background-color: $color-black-shade-1;}
+        &-shade-2{background-color: $color-black-shade-2;}
+        &-shade-3{background-color: $color-black-shade-3;}
+        &-shade-4{background-color: $color-black-shade-4;}
+        &-shade-5{background-color: $color-black-shade-5;}
+    }
+
+    &-brand-primary{
+        background-color: $color-brand-primary;
+
+        &-shade-1{background-color: $color-brand-primary-shade-1;}
+        &-shade-2{background-color: $color-brand-primary-shade-2;}
+        &-shade-3{background-color: $color-brand-primary-shade-3;}
+        &-shade-4{background-color: $color-brand-primary-shade-4;}
+        &-shade-5{background-color: $color-brand-primary-shade-5;}
+    }
+}

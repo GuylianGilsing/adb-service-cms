@@ -1,0 +1,19 @@
+$element-btn-class-name: '.btn';
+
+#{$element-btn-class-name}{
+    padding: 0.8em 1em;
+    display: inline-block;
+    color: $color-white;
+    line-height: 1;
+    font-size: $font-size-button;
+    border: none;
+    border-radius: 1em;
+    background-color: $color-brand-primary;
+    box-shadow: unset;
+    transition: $transition-default;
+
+    &:hover{
+        cursor: pointer;
+        background-color: $color-brand-primary-shade-1;
+    }
+}
