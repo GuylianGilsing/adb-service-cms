@@ -1,0 +1,9 @@
+# Files
+.env
+.env.example
+
+# Folders
+dist
+dist/*
+node_modules
+node_modules/*

@@ -1,0 +1,64 @@
+$element-table-class-name: '.table';
+
+#{$element-table-class-name}{
+    width: 100%;
+    border-collapse: collapse;
+
+    &__head{
+        background-color: $color-brand-primary;
+    }
+
+    &__heading{
+        padding: 0.5em 1em;
+        color: $color-white;
+        text-align: left;
+    }
+
+    &__body{
+        td{
+            padding: 0.5em 1em;
+        }
+    }
+
+    &__row{
+        &:nth-child(even){
+            background-color: $color-white-shade-2;
+        }
+
+        &--deleting{
+            opacity: 0.35;
+            pointer-events: none;
+        }
+
+        &--table-empty,
+        &--table-preloading{
+            td{
+                padding: 1em;
+            }
+        }
+    }
+
+    &__actions{
+        display: flex;
+
+        & > *{
+            cursor: pointer;
+            color: $color-black;
+            text-decoration: underline;
+
+            &:hover{
+                opacity: 0.5;
+            }
+
+            &:not(:last-child){
+                margin-right: 1em;
+            }
+        }
+    }
+
+    &__action{
+        &-delete{
+            color: $color-error;
+        }
+    }
+}

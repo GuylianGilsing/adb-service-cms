@@ -1,0 +1,45 @@
+$element-input-field-table-class-name: '.input-field-table';
+
+#{$element-input-field-table-class-name}{
+    border: solid 0.125em $color-black;
+
+    &__row{
+        &:not(:last-child){
+            border-bottom: solid 0.125em $color-black;
+        }
+    }
+
+    &__title{
+        padding: 0.4em 1em;
+        font-weight: $font-weight-semi-bold;
+        
+        &:not(:last-child){
+            border-bottom: solid 0.125em $color-black;
+        }
+    }
+
+    .input-field{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &__label{
+            margin: 0;
+            padding: 0.4em 1em;
+            padding-right: 0;
+            flex: 1 0 auto;
+        }
+
+        &__field{
+            border: none;
+            padding-left: 0.4em;
+            flex: 1 1 100%;
+        }
+    }
+
+    & + #{$element-input-field-table-class-name},
+    & + .input-field,
+    & + .input-field-wrapper{
+        margin-top: 2em;
+    }
+}

@@ -1,0 +1,24 @@
+$element-preloader-class-name: '.preloader';
+
+#{$element-preloader-class-name}{
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0 auto;
+
+    &--spinner,
+    &--spinner-blue{
+        animation: anim-spinner 1s linear 0s infinite forwards normal;
+        border: solid 0.2em transparent;
+        border-top-color: $color-white;
+        border-radius: 50%;
+    }
+
+    &--spinner-blue{
+        border-top-color: $color-brand-primary;
+    }
+}
+
+@keyframes anim-spinner {
+    from{transform: rotate(0deg)}
+    to{transform: rotate(360deg)}
+}

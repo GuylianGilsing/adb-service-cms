@@ -1,0 +1,103 @@
+section{
+    padding-top: 2em;
+    padding-bottom: 2em;
+
+    & + section{
+        padding-top: 0;
+    }
+}
+
+.container{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media only screen and (max-width: $breakpoint-md){
+        width: 100%;
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
+
+    @media only screen and (max-width: $breakpoint-sm){
+        width: 100%;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &--vertical-center-items{
+        align-items: center;
+    }
+
+    &--space-between{
+        justify-content: space-between;
+    }
+
+    .space{
+        @include layout-space-content()
+    }
+
+    .col{
+        @include layout-col-content()
+    }
+
+    // xs
+    @media only screen and (max-width: $breakpoint-xs){
+        .space-xs{
+            @include layout-space-content()
+        }
+    
+        .col-xs{
+            @include layout-col-content()
+        }
+    }
+
+    // sm
+    @media only screen and (min-width: $breakpoint-sm){
+        .space-sm{
+            @include layout-space-content()
+        }
+    
+        .col-sm{
+            @include layout-col-content()
+        }
+    }
+
+    // md
+    @media only screen and (min-width: $breakpoint-md){
+        .space-md{
+            @include layout-space-content()
+        }
+    
+        .col-md{
+            @include layout-col-content()
+        }
+    }
+
+    // lg
+    @media only screen and (min-width: $breakpoint-lg){
+        .space-lg{
+            @include layout-space-content()
+        }
+    
+        .col-lg{
+            @include layout-col-content()
+        }
+    }
+
+    // xl
+    @media only screen and (min-width: $breakpoint-xl){
+        .space-xl{
+            @include layout-space-content()
+        }
+    
+        .col-xl{
+            @include layout-col-content()
+        }
+    }
+}
