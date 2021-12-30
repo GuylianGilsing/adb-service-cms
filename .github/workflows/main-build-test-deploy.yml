@@ -14,7 +14,7 @@ jobs:
       - name: "Setup NodeJS"
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
       # - name: "Permit CI to view and use mvnw"
       #   run: chmod +x mvnw
       # Environment setup
