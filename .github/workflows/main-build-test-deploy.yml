@@ -1,0 +1,45 @@
+name: "Build, test, and deploy the main branche"
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+jobs:
+  build:
+    runs-on: "ubuntu-latest"
+    steps:
+      # Action setup
+      - name: "Go to this branche"
+        uses: 'actions/checkout@v2'
+      - name: "Setup NodeJS"
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      # - name: "Permit CI to view and use mvnw"
+      #   run: chmod +x mvnw
+      # Environment setup
+      - name: "Create main property file"
+        run: |
+          touch ./.env
+          echo "VUE_APP_BACKEND_URL=\"http://127.0.0.1:8080/api/v1\"" > ./.env
+      # Testing
+      - name: "Install all packages"
+        run: ./npm install
+      - name: "Run tests"
+        run: ./npm run test:unit
+      # Build docker image
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      # Deploy image to dockerhub
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+            username: ${{ secrets.DOCKERHUB_USERNAME }}
+            password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      - name: Build and push
+        run: |
+            export DOCKER_BUILDKIT=0
+            export COMPOSE_DOCKER_CLI_BUILD=0
+            docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/adb-service-attractions:latest .
+            docker push ${{ secrets.DOCKERHUB_USERNAME }}/adb-service-attractions:latest
+      # TODO:: Update server deployment through SSH call
