@@ -18,7 +18,7 @@ jobs:
       # Environment setup
       - name: "Create main property file"
         run: |
-          touch ./.env
+          touch .env
           echo "VUE_APP_BACKEND_URL=\"http://guyliangilsing.me:8086/api/v1\"" > ./.env
       # Testing
       - name: "Install all packages"
