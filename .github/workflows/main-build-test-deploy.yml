@@ -15,13 +15,11 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16'
-      # - name: "Permit CI to view and use mvnw"
-      #   run: chmod +x mvnw
       # Environment setup
       - name: "Create main property file"
         run: |
           touch ./.env
-          echo "VUE_APP_BACKEND_URL=\"http://127.0.0.1:8080/api/v1\"" > ./.env
+          echo "VUE_APP_BACKEND_URL=\"http://127.0.0.1:8086/api/v1\"" > ./.env
       # Testing
       - name: "Install all packages"
         run: npm install
