@@ -17,6 +17,7 @@ COPY . ./
 RUN npm run test:unit
 
 RUN ls -a
+RUN cat .env
 
 # Build the application
 RUN npm run build
