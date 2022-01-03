@@ -18,10 +18,8 @@ jobs:
       # Environment setup
       - name: "Create main property file"
         run: |
-          ls
           touch ./.env
           echo "VUE_APP_BACKEND_URL=\"http://127.0.0.1:8086/api/v1\"" > ./.env
-          ls
       # Testing
       - name: "Install all packages"
         run: npm install
@@ -40,6 +38,6 @@ jobs:
         run: |
             export DOCKER_BUILDKIT=0
             export COMPOSE_DOCKER_CLI_BUILD=0
-            docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/adb-service-attractions:latest .
-            docker push ${{ secrets.DOCKERHUB_USERNAME }}/adb-service-attractions:latest
+            docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/adb-service-cms:latest .
+            docker push ${{ secrets.DOCKERHUB_USERNAME }}/adb-service-cms:latest
       # TODO:: Update server deployment through SSH call
