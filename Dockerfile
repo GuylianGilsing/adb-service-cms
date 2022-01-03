@@ -13,10 +13,6 @@ RUN npm install
 # Copy all of the source files into our image
 COPY . ./
 
-# Setup environment file
-RUN touch .env
-RUN echo 'VUE_APP_BACKEND_URL="http://127.0.0.1:8082/api/v1"' >> .env
-
 # Run unit-tests
 RUN npm run test:unit
 
