@@ -10,7 +10,7 @@ jobs:
     steps:
       # Action setup
       - name: "Go to this branche"
-        uses: 'actions/checkout@v2'
+        uses: actions/checkout@v2
       - name: "Setup NodeJS"
         uses: actions/setup-node@v2
         with:
@@ -40,4 +40,15 @@ jobs:
             export COMPOSE_DOCKER_CLI_BUILD=0
             docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/adb-service-cms:latest .
             docker push ${{ secrets.DOCKERHUB_USERNAME }}/adb-service-cms:latest
-      # TODO:: Update server deployment through SSH call
+            - name: Pull Dockerhub repositories and setup docker containers
+      - name: "Update deployment"
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd /var/www/docker/projects/attractions-database
+            docker-compose down
+            docker-compose pull
+            docker-compose up -d
