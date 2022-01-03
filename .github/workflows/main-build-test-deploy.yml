@@ -40,7 +40,6 @@ jobs:
             export COMPOSE_DOCKER_CLI_BUILD=0
             docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/adb-service-cms:latest .
             docker push ${{ secrets.DOCKERHUB_USERNAME }}/adb-service-cms:latest
-            - name: Pull Dockerhub repositories and setup docker containers
       - name: "Update deployment"
         uses: appleboy/ssh-action@master
         with:
