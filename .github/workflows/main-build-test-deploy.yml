@@ -18,9 +18,10 @@ jobs:
       # Environment setup
       - name: "Create main property file"
         run: |
-          unlink .env
+          ls
           touch ./.env
           echo "VUE_APP_BACKEND_URL=\"http://127.0.0.1:8086/api/v1\"" > ./.env
+          ls
       # Testing
       - name: "Install all packages"
         run: npm install
