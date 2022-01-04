@@ -1,4 +1,3 @@
-// import propertyMapper from "../functions/Mappers/PropertyMapper";
 import request from "./../functions/Request";
 import AxiosClient from "./clients/AxiosClient";
 

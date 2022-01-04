@@ -1,0 +1,17 @@
+# ============= #
+# === Build === #
+# ============= #
+FROM node:lts-alpine AS build
+
+WORKDIR /service-frontend
+
+# First retrieve the package.json and install all the dependencies.
+# This eliminates the need for re-installing all of the packages when the application code changes.
+COPY package*.json ./
+RUN npm install
+
+# Copy all of the source files into our image
+COPY . ./
+
+# Run the application
+RUN npm run serve --port 8081
