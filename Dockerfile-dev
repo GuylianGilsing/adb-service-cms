@@ -3,7 +3,7 @@
 # ============= #
 FROM node:lts-alpine AS build
 
-WORKDIR /service-frontend
+WORKDIR /service-cms
 
 # First retrieve the package.json and install all the dependencies.
 # This eliminates the need for re-installing all of the packages when the application code changes.
@@ -13,5 +13,7 @@ RUN npm install
 # Copy all of the source files into our image
 COPY . ./
 
+EXPOSE 8081
+
 # Run the application
-RUN npm run serve --port 8081
+CMD ["npm", "run", "serve", "--", "--port", "8081"]
