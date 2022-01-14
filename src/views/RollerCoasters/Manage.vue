@@ -275,7 +275,12 @@ export default {
 
             if(createdRollerCoaster == null)
             {
-                this.$data.processErrors.create = ['Something went wrong'];
+                if(service.hasGeneralError())
+                    this.$data.processErrors.create = [service.getGeneralError()];
+
+                if(service.hasFieldErrors())
+                    this.$data.fieldErrors = service.getFieldErrors();
+                
                 return;
             }
 
@@ -302,7 +307,12 @@ export default {
 
             if(updatedRollerCoaster == null)
             {
-                this.$data.processErrors.update = ['Something went wrong'];
+                if(service.hasGeneralError())
+                    this.$data.processErrors.update = [service.getGeneralError()];
+
+                if(service.hasFieldErrors())
+                    this.$data.fieldErrors = service.getFieldErrors();
+                
                 return;
             }
 
@@ -311,7 +321,7 @@ export default {
             setTimeout(() => {
                 this.$data.processSuccess.update = [];
             }, 5000);
-        }
+        },
     },
     updated()
     {
